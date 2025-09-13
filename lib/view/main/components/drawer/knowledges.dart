@@ -13,13 +13,15 @@ class Knowledges extends StatelessWidget {
         Divider(),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: Text('Knowledge',style: TextStyle(color: Colors.white),),
+          child: Text(
+            'Knowledge',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-        KnowledgeText(knowledge: 'VS Code, Android Studio,Eclipse'),
-        KnowledgeText(knowledge: 'MySQL, Firebase Firestore'),
+        KnowledgeText(knowledge: 'VS Code, Android Studio, Eclipse'),
+        KnowledgeText(knowledge: 'MySQL, Firebase Firestore, PostgreSQL'),
         KnowledgeText(knowledge: 'Git, Github, Postman'),
       ],
     );
   }
-
 }

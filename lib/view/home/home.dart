@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/view/about_us/about_us.dart';
 import 'package:my_portfolio/view/certifications/certifications.dart';
+import 'package:my_portfolio/view/experience/experience_view.dart';
 import 'package:my_portfolio/view/intro/introduction.dart';
 import 'package:my_portfolio/view/main/main_view.dart';
 import 'package:my_portfolio/view/projects/project_view.dart';
@@ -9,10 +11,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MainView(pages: [
+    return MainView(pages: [
       const Introduction(),
       ProjectsView(),
       Certifications(),
+        ExperienceSection(),
+        AboutSection(),
     ]);
   }
 }

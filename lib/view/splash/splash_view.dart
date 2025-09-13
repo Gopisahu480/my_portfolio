@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/res/constants.dart';
 import 'package:my_portfolio/view/home/home.dart';
 import 'package:my_portfolio/view/intro/components/animated_texts_componenets.dart';
+import '../intro/components/animated_texts_componenets copy.dart';
 import 'componenets/animated_loading_text.dart';
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -28,7 +29,7 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            AnimatedImageContainer(width: 100,height: 100,),
+            AnimatedImageContainerCopy(width: 100,height: 100,),
             SizedBox(height: defaultPadding,),
             AnimatedLoadingText(),
           ],

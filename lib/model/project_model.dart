@@ -23,7 +23,7 @@ List<Project> projectList = [
       'FixHR App',
       'Developed a Travel and Daily Allowance (TA DA) Management System using Flutter with Bloc state management,Implemented real-time data synchronization and report generation features.',
       'assets/images/alarm.jpg',
-      'https://play.google.com/store/apps/details?id=com.fixingdots.htkc.fixhr&hl=en_IN'),
+      'https://play.google.com/store/apps/details?id=com.fd.fixHR&pcampaignid=web_share'),
   Project(
       'Saloon App',
       'Developed a salon booking and management app with real-time appointments and user profile, '

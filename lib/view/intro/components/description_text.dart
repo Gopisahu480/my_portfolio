@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../view model/responsive.dart';
+import '../../../controller/responsive.dart';
 
 class AnimatedDescriptionText extends StatelessWidget {
   const AnimatedDescriptionText(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_portfolio/model/project_model.dart';
 import 'package:my_portfolio/res/constants.dart';
-import 'package:my_portfolio/view%20model/getx_controllers/projects_controller.dart';
+import 'package:my_portfolio/controller/getx_controllers/projects_controller.dart';
 import 'package:my_portfolio/view/projects/components/project_deatail.dart';
 import 'image_viewer.dart';
 

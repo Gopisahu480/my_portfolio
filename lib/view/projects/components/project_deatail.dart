@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:my_portfolio/model/project_model.dart';
 import 'package:my_portfolio/res/constants.dart';
-import 'package:my_portfolio/view%20model/responsive.dart';
+import 'package:my_portfolio/controller/responsive.dart';
 import 'package:my_portfolio/view/projects/components/project_link.dart';
 
 class ProjectDetail extends StatelessWidget {

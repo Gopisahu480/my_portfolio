@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:my_portfolio/model/certificate_model.dart';
 import 'package:my_portfolio/res/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../../view model/getx_controllers/certification_controller.dart';
+import '../../../controller/getx_controllers/certification_controller.dart';
 
 class CertificateStack extends StatelessWidget {
   final controller = Get.put(CertificationController());

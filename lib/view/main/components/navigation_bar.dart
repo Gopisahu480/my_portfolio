@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/view%20model/responsive.dart';
+import 'package:my_portfolio/controller/responsive.dart';
 import 'package:my_portfolio/view/intro/components/side_menu_button.dart';
 import 'package:my_portfolio/view/main/components/connect_button.dart';
 import '../../../res/constants.dart';

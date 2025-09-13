@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../res/constants.dart';
 import '../../../controller/responsive.dart';
 
-class AnimatedImageContainer extends StatefulWidget {
-  const AnimatedImageContainer({Key? key, this.height = 300, this.width = 250})
+class AnimatedImageContainerCopy extends StatefulWidget {
+  const AnimatedImageContainerCopy(
+      {Key? key, this.height = 300, this.width = 250})
       : super(key: key);
   final double? width;
   final double? height;
-  
+
   @override
   AnimatedImageContainerState createState() => AnimatedImageContainerState();
 }
 
-class AnimatedImageContainerState extends State<AnimatedImageContainer>
+class AnimatedImageContainerState extends State<AnimatedImageContainerCopy>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   @override
@@ -69,7 +70,7 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Image.asset(
-                'assets/images/profile2.webp',
+                'assets/images/image.png',
                 filterQuality: FilterQuality.high, // High quality rendering
                 height: Responsive.isLargeMobile(context)
                     ? MediaQuery.sizeOf(context).width * 0.2
