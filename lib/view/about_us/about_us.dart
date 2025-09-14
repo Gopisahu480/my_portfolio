@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_portfolio/controller/getx_controllers/about_controller.dart';
 import 'package:my_portfolio/model/statistic_model.dart';
-
 import '../../model/service_model.dart';
 
 class AboutSection extends StatelessWidget {
@@ -18,9 +17,7 @@ class AboutSection extends StatelessWidget {
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(isSmallScreen ? 16.0 : 24.0),
-        decoration: const BoxDecoration(
-          color: bgColor,
-        ),
+        decoration: const BoxDecoration(color: bgColor),
         child: AnimatedBuilder(
           animation: controller.fadeAnimation,
           builder: (context, child) {
@@ -31,11 +28,8 @@ class AboutSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Section Header
                     _buildSectionHeader(),
                     SizedBox(height: isSmallScreen ? 32 : 48),
-
-                    // Main Content
                     isSmallScreen
                         ? Column(
                             children: [
@@ -49,7 +43,6 @@ class AboutSection extends StatelessWidget {
                         : Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Left side - About content and services
                               Expanded(
                                 flex: 2,
                                 child: Column(
@@ -61,8 +54,6 @@ class AboutSection extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(width: 40),
-
-                              // Right side - Statistics
                               Expanded(
                                 flex: 1,
                                 child: _buildStatisticsSection(controller),
@@ -113,15 +104,13 @@ class AboutSection extends StatelessWidget {
         color: secondaryColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFF64FFDA).withOpacity(0.2),
-          width: 1,
-        ),
+            color: const Color(0xFF64FFDA).withOpacity(0.2), width: 1),
       ),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "I am a passionate software developer who enjoys creating solutions from scratch and turning ideas into reality. My journey in this field is driven by a constant desire to learn, experiment, and improve. I believe software development is not just about writing code, but about solving problems and building meaningful applications that make a difference. I enjoy working across different technologies, exploring both front-end and back-end, and continuously sharpening my skills. For me, development is a creative process that combines logic, design, and innovation into something impactful and lasting.",
+            "I am a passionate software developer who enjoys creating solutions from scratch and turning ideas into reality. My journey in this field is driven by a constant desire to learn, experiment, and improve. I believe software development is not just about writing code, but about solving problems and building meaningful applications that make a difference. I enjoy working across different technologies, exploring both front-end and back-end, and continuously sharpening my skills. For me, development is a creative process that combines logic, design, and innovation into something impactful.",
             style: TextStyle(
               fontSize: 16,
               color: bodyTextColor,
@@ -129,16 +118,16 @@ class AboutSection extends StatelessWidget {
               letterSpacing: 0.5,
             ),
           ),
-          SizedBox(height: 20),
-          Text(
-            "My passion lies in creating innovative solutions that bridge the gap between complex technology and user-friendly experiences. I believe in continuous learning and adapting to new technologies to deliver the best results.",
-            style: TextStyle(
-              fontSize: 16,
-              color: bodyTextColor,
-              height: 1.6,
-              letterSpacing: 0.5,
-            ),
-          ),
+          // SizedBox(height: 20),
+          // Text(
+          //   "My passion lies in creating innovative solutions that bridge the gap between complex technology and user-friendly experiences. I believe in continuous learning and adapting to new technologies to deliver the best results.",
+          //   style: TextStyle(
+          //     fontSize: 16,
+          //     color: bodyTextColor,
+          //     height: 1.6,
+          //     letterSpacing: 0.5,
+          //   ),
+          // ),
         ],
       ),
     );
@@ -151,10 +140,7 @@ class AboutSection extends StatelessWidget {
         const Text(
           'What I Do',
           style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: primaryColor,
-          ),
+              fontSize: 24, fontWeight: FontWeight.bold, color: primaryColor),
         ),
         const SizedBox(height: 24),
         Column(
@@ -175,29 +161,20 @@ class AboutSection extends StatelessWidget {
       decoration: BoxDecoration(
         color: secondaryColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: service.accentColor.withOpacity(0.3),
-          width: 1,
-        ),
+        border:
+            Border.all(color: service.accentColor.withOpacity(0.3), width: 1),
       ),
       child: Row(
         children: [
-          // Service Icon with colored background
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: service.accentColor.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Icon(
-              service.icon,
-              color: service.accentColor,
-              size: 24,
-            ),
+            child: Icon(service.icon, color: service.accentColor, size: 24),
           ),
           const SizedBox(width: 16),
-
-          // Service Details
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,19 +182,15 @@ class AboutSection extends StatelessWidget {
                 Text(
                   service.title,
                   style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: primaryColor,
-                  ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: primaryColor),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   service.description,
                   style: const TextStyle(
-                    fontSize: 14,
-                    color: bodyTextColor,
-                    height: 1.4,
-                  ),
+                      fontSize: 14, color: bodyTextColor, height: 1.4),
                 ),
               ],
             ),
@@ -234,41 +207,29 @@ class AboutSection extends StatelessWidget {
         const Text(
           'My Achievements',
           style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: primaryColor,
-          ),
+              fontSize: 24, fontWeight: FontWeight.bold, color: primaryColor),
         ),
         const SizedBox(height: 24),
         Column(
           children: [
             _buildStatCard(
-              controller.completedProjects,
-              controller.statistics[0],
-            ),
+                controller.completedProjects, controller.statistics[0]),
             const SizedBox(height: 20),
             _buildStatCard(
-              controller.clientSatisfaction,
-              controller.statistics[1],
-            ),
+                controller.clientSatisfaction, controller.statistics[1]),
             const SizedBox(height: 20),
             _buildStatCard(
-              controller.yearsExperience,
-              controller.statistics[2],
-            ),
+                controller.yearsExperience, controller.statistics[2]),
           ],
         ),
         const SizedBox(height: 24),
-
-        // Restart Animation Button
         GestureDetector(
           onTap: () => controller.restartAnimation(),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [Color(0xFF64FFDA), Color(0xFF00BCD4)],
-              ),
+                  colors: [Color(0xFF64FFDA), Color(0xFF00BCD4)]),
               borderRadius: BorderRadius.circular(25),
             ),
             child: const Row(
@@ -279,10 +240,9 @@ class AboutSection extends StatelessWidget {
                 Text(
                   'Restart Animation',
                   style: TextStyle(
-                    color: darkColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  ),
+                      color: darkColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14),
                 ),
               ],
             ),
@@ -298,10 +258,7 @@ class AboutSection extends StatelessWidget {
       decoration: BoxDecoration(
         color: secondaryColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: stat.accentColor.withOpacity(0.3),
-          width: 1,
-        ),
+        border: Border.all(color: stat.accentColor.withOpacity(0.3), width: 1),
       ),
       child: Column(
         children: [
@@ -311,18 +268,16 @@ class AboutSection extends StatelessWidget {
                     TextSpan(
                       text: value.value.toString(),
                       style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: stat.accentColor,
-                      ),
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: stat.accentColor),
                     ),
                     TextSpan(
                       text: stat.suffix,
                       style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: stat.accentColor,
-                      ),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: stat.accentColor),
                     ),
                   ],
                 ),
@@ -332,10 +287,9 @@ class AboutSection extends StatelessWidget {
             stat.label,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 14,
-              color: bodyTextColor,
-              fontWeight: FontWeight.w500,
-            ),
+                fontSize: 14,
+                color: bodyTextColor,
+                fontWeight: FontWeight.w500),
           ),
         ],
       ),

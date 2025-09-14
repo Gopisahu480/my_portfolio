@@ -56,7 +56,7 @@ class NavigationButtonList extends StatelessWidget {
                       curve: Curves.easeIn,
                     );
                   },
-                  text: 'About us'),
+                  text: 'About '),
             ],
           ),
         );

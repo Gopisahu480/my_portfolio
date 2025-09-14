@@ -9,7 +9,7 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
   late Animation<double> fadeAnimation;
   late Animation<double> slideAnimation;
 
-  // Statistics with animated counters
+  // Animated counters
   var completedProjects = 0.obs;
   var clientSatisfaction = 0.obs;
   var yearsExperience = 0.obs;
@@ -40,19 +40,19 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
 
   final List<Statistic> statistics = [
     Statistic(
-      value: "15",
+      value: "0",
       label: "Completed\nProjects",
       suffix: "+",
       accentColor: const Color(0xFF64FFDA),
     ),
     Statistic(
-      value: "75",
+      value: "0",
       label: "Client\nsatisfaction",
       suffix: "%",
       accentColor: const Color(0xFF00BCD4),
     ),
     Statistic(
-      value: "3",
+      value: "0",
       label: "Years of\nexperience",
       suffix: "+",
       accentColor: const Color(0xFFFF6B6B),
@@ -89,45 +89,35 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
       curve: Curves.easeOutCubic,
     ));
 
-    // Start animations
     fadeController.forward();
     _animateCounters();
   }
 
   void _animateCounters() {
-    counterController.forward();
+    counterController.forward(from: 0);
 
-    // Animate completed projects
-    final projectTween = IntTween(begin: 0, end: 120);
-    final projectAnimation = projectTween.animate(CurvedAnimation(
-      parent: counterController,
-      curve: Curves.easeOut,
-    ));
-
-    // Animate client satisfaction
-    final satisfactionTween = IntTween(begin: 0, end: 95);
-    final satisfactionAnimation = satisfactionTween.animate(CurvedAnimation(
-      parent: counterController,
-      curve: Curves.easeOut,
-    ));
-
-    // Animate years experience
-    final yearsTween = IntTween(begin: 0, end: 10);
-    final yearsAnimation = yearsTween.animate(CurvedAnimation(
-      parent: counterController,
-      curve: Curves.easeOut,
-    ));
-
-    projectAnimation.addListener(() {
-      completedProjects.value = projectAnimation.value;
+    // Completed Projects
+    IntTween(begin: 0, end: 15)
+        .animate(
+            CurvedAnimation(parent: counterController, curve: Curves.easeOut))
+        .addListener(() {
+      completedProjects.value = (15 * counterController.value).toInt();
     });
 
-    satisfactionAnimation.addListener(() {
-      clientSatisfaction.value = satisfactionAnimation.value;
+    // Client Satisfaction
+    IntTween(begin: 0, end: 85)
+        .animate(
+            CurvedAnimation(parent: counterController, curve: Curves.easeOut))
+        .addListener(() {
+      clientSatisfaction.value = (85 * counterController.value).toInt();
     });
 
-    yearsAnimation.addListener(() {
-      yearsExperience.value = yearsAnimation.value;
+    // Years Experience
+    IntTween(begin: 0, end: 3)
+        .animate(
+            CurvedAnimation(parent: counterController, curve: Curves.easeOut))
+        .addListener(() {
+      yearsExperience.value = (3 * counterController.value).toInt();
     });
   }
 
